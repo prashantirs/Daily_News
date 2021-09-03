@@ -1,12 +1,15 @@
-import React from 'react' //rce
+import React  from 'react' //rce
 import {
   Link
 } from "react-router-dom";
 
-const NavBar=()=>{
+
+export default function Navbar(props){
+// const NavBar=()=>{
+  
         return (
           <div>
-            <nav className="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+            <nav className={`navbar fixed-top navbar-expand-lg navbar-${props.mode==='white'?'dark':'dark'} bg-${props.mode==='white'?'dark':'dark'}`}>
               <div className="container-fluid">
                   <Link className="navbar-brand" to="/">Daily News</Link>
                   <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -22,10 +25,13 @@ const NavBar=()=>{
                       <li className="nav-item"><Link className="nav-link" to="/science">Science</Link></li>
                       <li className="nav-item"><Link className="nav-link" to="/sports">Sports</Link></li>
                       <li className="nav-item"><Link className="nav-link" to="/technology">Technology</Link></li>
-                      
                     
                       
                   </ul>
+                        <div class="form-check form-switch">
+                          {/* <input className="form-check-input" type="checkbox" id="flexSwitchCheckDefault" /> */}
+                          <input className="form-check-input" type="checkbox" id="flexSwitchCheckDefault" onClick={props.handelDark}/>
+                        </div>
                   
                   </div>
               </div>
@@ -35,4 +41,4 @@ const NavBar=()=>{
     
 }
 
-export default NavBar
+// export default NavBar

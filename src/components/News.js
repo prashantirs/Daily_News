@@ -7,7 +7,7 @@ import InfiniteScroll from "react-infinite-scroll-component";
 
 
 const News =(props)=> {
-  
+  //React Hooks useState,useEffect only used in function based components
   const [articles, setArticles] = useState([])
   const [loading, setLoading] = useState(false)
   const [page, setPage] = useState(1)
@@ -53,7 +53,7 @@ const News =(props)=> {
   
     return (
       <>
-        <h1 className="text-center" style={{ margin: "35px 0px",marginTop:'90px' }}>
+        <h1 className="text-center" style={props.mode==='white'?{color:'black',margin: "35px 0px",marginTop:'90px'}:{color:'white',margin: "35px 0px",marginTop:'90px'}} >
           Daily News From - {capitalizeFirstLetter(props.category)}
         </h1>
         {loading && <Spinner />}
@@ -69,7 +69,7 @@ const News =(props)=> {
               {articles.map((element) => {
                 return (
                   <div className="col-md-4 my-2" key={element.url}>
-                    <NewsItems title={element.title} description={element.description} imageUrl={element.urlToImage} newsUrl={element.url} date={element.publishedAt} source={element.source.name}/>
+                    <NewsItems title={element.title} description={element.description} imageUrl={element.urlToImage} newsUrl={element.url} date={element.publishedAt} source={element.source.name} mode={props.mode}/>
                   </div>
                 );
               })}
