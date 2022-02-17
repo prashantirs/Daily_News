@@ -1,7 +1,7 @@
-React Based NEWS App
+## React Based NEWS App
 ![image](https://user-images.githubusercontent.com/65569156/154497587-13426bad-8d96-4335-8164-dfe97c80d7d7.png)
 
-#DARK MODE
+## DARK MODE
 ![image](https://user-images.githubusercontent.com/65569156/154497369-c7319fb8-06e5-42e7-ba9b-39e6a79cfc0a.png)
 
 
